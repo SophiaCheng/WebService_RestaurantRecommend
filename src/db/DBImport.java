@@ -14,7 +14,7 @@ public class DBImport {
 	public static void main(String[] args) {
 	 	 try {
 			//Step 1: Initialize the driver and connect to a SQL server
-	 		 Class.forName("com.mysql.jdbc.Driver").newInstance();
+	 		 Class.forName("com.mysql.jdbc.Driver").newInstance();//启动driver
 
 	 		 Connection conn = null;
 	 		 String line = null;
@@ -139,8 +139,8 @@ public class DBImport {
 	  }
 
 	
-	/**
-	   * Replace \ by \", and / by or.
+	  /**
+	   * Replace " by \", and / by or.
 	   */
 	  public static String parseString(String str) {
 	 	 return str.replace("\"", "\\\"").replace("/", " or ").replace("'", " ");
